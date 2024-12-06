@@ -17,6 +17,11 @@ public class StudentController {
     @Autowired
     private StudentService studentService;
 
+    @GetMapping("/")
+    public ResponseEntity<String> healthCheck() {
+        return ResponseEntity.ok("Backend is running");
+    }
+
     @PostMapping("/add")
     public ResponseEntity<?> addStudent(@RequestBody
     Student student){
